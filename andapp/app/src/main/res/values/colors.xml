@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#008C00</color>
+    <color name="crm">#E0FFB6</color>
+    <color name="purp">#8200C3</color>
+    <color name="winblu">#0000AA</color>
+    <color name="cyan">#00BFA5</color>
+    <color name="Turbo">#ffe600</color>
+    <color name="stbarbg">#88FAB0</color>
+</resources>

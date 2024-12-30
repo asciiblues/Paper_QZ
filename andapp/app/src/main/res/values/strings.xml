@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Paper QZ</string>
+    <string-array name="qzprt">
+        <item>Select QZ port</item>
+        <item>8181</item>
+        <item>8282</item>
+        <item>8383</item>
+        <item>8484</item>
+    </string-array>
+</resources>
