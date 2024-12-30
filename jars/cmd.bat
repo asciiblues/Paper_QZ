@@ -1,0 +1,1 @@
+powershell ./jdk17/bin/java.exe -jar ./cmd.jar
