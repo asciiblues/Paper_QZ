@@ -507,3 +507,5 @@ jars/jdk17/lib/security/public_suffix_list.dat
 jars/jdk17/lib/tzdb.dat
 jars/jdk17/lib/tzmappings
 jars/jdk17/release
+setup/setup_pqz-cache/part3/output-info.ini
+setup/setup_pqz-cache/cacheIndex.txt
