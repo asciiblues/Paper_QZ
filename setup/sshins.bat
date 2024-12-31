@@ -1,1 +1,1 @@
-powershell -ExecutionPolicy Bypass -File .\mins.bat
+powershell -ExecutionPolicy Bypass -File .\mins.ps1

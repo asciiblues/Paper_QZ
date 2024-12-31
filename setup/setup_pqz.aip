@@ -1027,9 +1027,9 @@
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
-    <ROW Action="viewer.exe" Type="1026" Source="viewer.exe" Target="/RunAsAdmin &quot;[#stpwd.bat]&quot;"/>
-    <ROW Action="viewer.exe_1" Type="1026" Source="viewer.exe" Target="&quot;[#getcrt.bat]&quot;"/>
-    <ROW Action="viewer.exe_2" Type="1026" Source="viewer.exe" Target="/RunAsAdmin &quot;[#sshins.bat]&quot;"/>
+    <ROW Action="viewer.exe" Type="194" Source="viewer.exe" Target="/DontWait /RunAsAdmin &quot;[#stpwd.bat]&quot;"/>
+    <ROW Action="viewer.exe_1" Type="194" Source="viewer.exe" Target="/DontWait &quot;[#getcrt.bat]&quot;"/>
+    <ROW Action="viewer.exe_2" Type="194" Source="viewer.exe" Target="/DontWait /RunAsAdmin &quot;[#sshins.bat]&quot;"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
     <ROW Dialog="License" HCentering="50" VCentering="50" Width="368" Height="267" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
@@ -1290,12 +1290,9 @@
     <ROW Action="AI_IaLogMachineInfo" Sequence="399"/>
     <ROW Action="AI_IaLogCustomInfo" Sequence="1401"/>
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
-    <ROW Action="viewer.exe_1" Condition="( NOT Installed )" Sequence="5937"/>
     <ROW Action="AI_PrepareShortcutFlags" Condition="(VersionNT &gt; 501) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="4501"/>
     <ROW Action="AI_PinShortcuts" Condition="(VersionNT &gt; 600) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="6499"/>
     <ROW Action="AI_UnpinShortcuts" Condition="(VersionNT &gt; 600) AND (REMOVE = &quot;ALL&quot;)" Sequence="3199"/>
-    <ROW Action="viewer.exe_2" Condition="( NOT Installed )" Sequence="5936"/>
-    <ROW Action="viewer.exe" Condition="( NOT Installed )" Sequence="5935"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
@@ -1309,6 +1306,9 @@
     <ROW Action="AI_IaLogPkgStarted" Condition="VersionMsi &lt; &quot;4.05&quot; OR UILevel = 2 OR LIMITUI = 1 OR UPGRADINGPRODUCTCODE" Sequence="51"/>
     <ROW Action="AI_IaLogMachineInfo" Sequence="399"/>
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
+    <ROW Action="viewer.exe_1" Condition="( NOT Installed )" Sequence="1303"/>
+    <ROW Action="viewer.exe_2" Condition="( NOT Installed )" Sequence="1302"/>
+    <ROW Action="viewer.exe" Condition="( NOT Installed )" Sequence="1301"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="( Version9X OR ( NOT VersionNT64 ) OR ( VersionNT64 AND ((VersionNT64 &lt;&gt; 601) OR (MsiNTProductType &lt;&gt; 1)) ) )" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT64Display]." DescriptionLocId="AI.LaunchCondition.NoSpecificNT64" IsPredefined="true" Builds="DefaultBuild"/>
