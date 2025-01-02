@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DOCUMENT Type="Advanced Installer" CreateVersion="21.9" version="21.9" Modules="architect" RootPath="." Language="en" Id="{7C06C2D8-6F60-4BA7-82C4-96BA8DFF8675}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="AutoSave" Value="2"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_APP_FILE" Value="[#server.jar]"/>
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
@@ -10,10 +13,15 @@
     <ROW Property="AI_ThemeStyle" Value="aero" MultiBuildValue="DefaultBuild:classic" MsiKey="AI_ThemeStyle"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="The solution of run qz form your android phone (Paper QZ)" ValueLocId="*"/>
+    <ROW Property="ARPCONTACT" Value="Email :- nzzz101.3z@gmail.com"/>
+    <ROW Property="ARPHELPLINK" Value="https://github.com/asciiblues/Paper_QZ/issues"/>
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="favicon.exe" Type="8"/>
+    <ROW Property="ARPURLINFOABOUT" Value="https://github.com/asciiblues/Paper_QZ/"/>
+    <ROW Property="ARPURLUPDATEINFO" Value="https://github.com/asciiblues/Paper_QZ/releases"/>
     <ROW Property="CTRLS" Value="2"/>
+    <ROW Property="CurrentJavaProductName" Value="CurrentJavaProductName"/>
     <ROW Property="Manufacturer" Value="asciiblues"/>
     <ROW Property="ProductCode" Value="1033:{65152E2B-BE43-491D-B527-178529B3014E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
@@ -36,12 +44,14 @@
     <ROW Property="WindowsTypeNT64" MultiBuildValue="DefaultBuild:Windows 7 x64" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT64Display" MultiBuildValue="DefaultBuild:Windows 7 x64" ValueLocId="-"/>
     <ROW Property="WindowsTypeNTDisplay" MultiBuildValue="DefaultBuild:32-bit Windows versions" ValueLocId="-"/>
+    <ROW Property="pswd" Value="[|EDIT_1_PROP]" Options="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="UserProfileFolder" Directory_Parent="TARGETDIR" DefaultDir="USERPR~1|UserProfileFolder" IsPseudoRoot="1"/>
     <ROW Directory="bin_Dir" Directory_Parent="jdk17_Dir" DefaultDir="bin"/>
     <ROW Directory="bridge_Dir" Directory_Parent="win32_Dir" DefaultDir="bridge"/>
     <ROW Directory="conf_Dir" Directory_Parent="jdk17_Dir" DefaultDir="conf"/>
@@ -353,18 +363,14 @@
     <ROW Component="zip.dll" ComponentId="{62273FEE-7B46-4686-B5E9-88334AA04292}" Directory_="bin_Dir" Attributes="256" KeyPath="zip.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
-    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Builds="DefaultBuild"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="cmd.jar" Component_="cmd.jar" FileName="cmd.jar" Attributes="0" SourcePath="..\jars\cmd.jar" SelfReg="false"/>
     <ROW File="server.jar" Component_="cmd.jar" FileName="server.jar" Attributes="0" SourcePath="..\jars\server.jar" SelfReg="false"/>
     <ROW File="cmd.bat" Component_="cmd.bat" FileName="cmd.bat" Attributes="0" SourcePath="..\jars\cmd.bat" SelfReg="false"/>
-    <ROW File="getcrt.bat" Component_="cmd.jar" FileName="getcrt.bat" Attributes="0" SourcePath="..\jars\getcrt.bat" SelfReg="false"/>
-    <ROW File="getcrt.jar" Component_="cmd.jar" FileName="getcrt.jar" Attributes="0" SourcePath="..\jars\getcrt.jar" SelfReg="false"/>
     <ROW File="server.bat" Component_="server.bat" FileName="server.bat" Attributes="0" SourcePath="..\jars\server.bat" SelfReg="false"/>
-    <ROW File="stpwd.bat" Component_="cmd.jar" FileName="stpwd.bat" Attributes="0" SourcePath="..\jars\stpwd.bat" SelfReg="false"/>
-    <ROW File="stpwd.jar" Component_="cmd.jar" FileName="stpwd.jar" Attributes="0" SourcePath="..\jars\stpwd.jar" SelfReg="false"/>
     <ROW File="apimswincoreconsolel110.dll" Component_="apimswincoreconsolel110.dll" FileName="API-MS~1.DLL|api-ms-win-core-console-l1-1-0.dll" Attributes="0" SourcePath="..\jars\jdk17\bin\api-ms-win-core-console-l1-1-0.dll" SelfReg="false"/>
     <ROW File="apimswincoreconsolel120.dll" Component_="apimswincoreconsolel120.dll" FileName="API-MS~2.DLL|api-ms-win-core-console-l1-2-0.dll" Attributes="0" SourcePath="..\jars\jdk17\bin\api-ms-win-core-console-l1-2-0.dll" SelfReg="false"/>
     <ROW File="apimswincoredatetimel110.dll" Component_="apimswincoredatetimel110.dll" FileName="API-MS~3.DLL|api-ms-win-core-datetime-l1-1-0.dll" Attributes="0" SourcePath="..\jars\jdk17\bin\api-ms-win-core-datetime-l1-1-0.dll" SelfReg="false"/>
@@ -852,6 +858,8 @@
     <ROW File="release" Component_="release" FileName="release" Attributes="0" SourcePath="..\jars\jdk17\release" SelfReg="false"/>
     <ROW File="mins.ps1" Component_="cmd.jar" FileName="mins.ps1" Attributes="0" SourcePath="mins.ps1" SelfReg="false"/>
     <ROW File="sshins.bat" Component_="cmd.jar" FileName="sshins.bat" Attributes="0" SourcePath="sshins.bat" SelfReg="false"/>
+    <ROW File="getcrt.bat" Component_="cmd.jar" FileName="getcrt.bat" Attributes="0" SourcePath="..\jars\getcrt.bat" SelfReg="false"/>
+    <ROW File="getcrt.jar" Component_="cmd.jar" FileName="getcrt.jar" Attributes="0" SourcePath="..\jars\getcrt.jar" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AiPersistentPropComponent">
     <ROW Property="AI_IA_ENABLE" Registry="AI_IA_ENABLE" HklmSearch="AI_IA_ENABLE" HkcuSearch="AI_IA_ENABLE_1"/>
@@ -865,7 +873,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="151"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="3" PackageType="1" FilesInsideExe="true" ExeIconPath="favicon.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" UseLargeSchema="true" ExeName="setup_pqz"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="2" PackageType="1" FilesInsideExe="true" ExeIconPath="favicon.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" UseLargeSchema="true" ExeName="setup_pqz" JRE64Dir="jdk17_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -874,6 +882,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
     <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="LicenseAgreementDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\LicenseAgreementDlg.aip"/>
     <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
     <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
     <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
@@ -887,10 +896,20 @@
     <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_CommitAccounts" Description="Commit the creation of user accounts on the local computer" DescriptionLocId="ActionText.Description.AI_CommitAccounts"/>
+    <ROW Action="AI_CreateAccount" Description="Creating user account on the local computer" DescriptionLocId="ActionText.Description.AI_CreateAccount" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_CreateAccount"/>
     <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
     <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
     <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
     <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ProcessAccounts" Description="Generating actions to create user accounts on the local computer" DescriptionLocId="ActionText.Description.AI_ProcessAccounts" Template="Account: [1], Attributes: [2]" TemplateLocId="ActionText.Template.AI_ProcessAccounts"/>
+    <ROW Action="AI_RemoveAccount" Description="Removing user account from the local computer" DescriptionLocId="ActionText.Description.AI_RemoveAccount" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_RemoveAccount"/>
+    <ROW Action="AI_RollbackAccount" Description="Rolling back the creation of user accounts on the local computer" DescriptionLocId="ActionText.Description.AI_RollbackAccount" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_RollbackAccount"/>
+    <ROW Action="AI_TxtUpdaterCommit" Description="Commit text file changes. " DescriptionLocId="ActionText.Description.AI_TxtUpdaterCommit" Template="Commit text file changes." TemplateLocId="ActionText.Template.AI_TxtUpdaterCommit"/>
+    <ROW Action="AI_TxtUpdaterConfig" Description="Executing text file updates" DescriptionLocId="ActionText.Description.AI_TxtUpdaterConfig" Template="Updating text file: &quot;[1]&quot;" TemplateLocId="ActionText.Template.AI_TxtUpdaterConfig"/>
+    <ROW Action="AI_TxtUpdaterInstall" Description="Generating actions to configure text files updates" DescriptionLocId="ActionText.Description.AI_TxtUpdaterInstall"/>
+    <ROW Action="AI_TxtUpdaterRollback" Description="Rolling back text file changes. " DescriptionLocId="ActionText.Description.AI_TxtUpdaterRollback" Template="Rolling back text file changes." TemplateLocId="ActionText.Template.AI_TxtUpdaterRollback"/>
+    <ROW Action="AI_UninstallAccounts" Description="Generating actions to create user accounts on the local computer" DescriptionLocId="ActionText.Description.AI_ProcessAccounts" Template="Account: [1], Attributes: [2]" TemplateLocId="ActionText.Template.AI_ProcessAccounts"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
     <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
@@ -900,12 +919,14 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="InstallerAnalytics.dll" SourcePath="&lt;AI_CUSTACTS&gt;InstallerAnalytics.dll"/>
+    <ROW Name="PowerShellScriptLauncher.dll" SourcePath="&lt;AI_CUSTACTS&gt;PowerShellScriptLauncher.dll"/>
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
-    <ROW Name="ShortcutFlags.dll" SourcePath="&lt;AI_CUSTACTS&gt;ShortcutFlags.dll"/>
     <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
+    <ROW Name="TxtUpdater.dll" SourcePath="&lt;AI_CUSTACTS&gt;TxtUpdater.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
-    <ROW Name="viewer.exe" SourcePath="&lt;AI_CUSTACTS&gt;viewer.exe" DigSign="true"/>
+    <ROW Name="mins.ps1" SourcePath="mins.ps1"/>
+    <ROW Name="userAccounts.dll" SourcePath="&lt;AI_CUSTACTS&gt;userAccounts.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
     <ROW Dialog_="ExitDialog" Control="ViewReadmeCheckBox" Type="CheckBox" X="135" Y="140" Width="10" Height="10" Attributes="3" Property="VIEWREADME" Order="500" MsiKey="ExitDialog#ViewReadmeCheckBox" Options="1"/>
@@ -914,9 +935,10 @@
     <ROW Dialog_="ExitDialog" Control="LaunchProdCheckBox" Type="CheckBox" X="135" Y="170" Width="10" Height="10" Attributes="3" Property="RUNAPPLICATION" Order="800" MsiKey="ExitDialog#LaunchProdCheckBox" Options="1"/>
     <ROW Dialog_="ExitDialog" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="20" Attributes="196611" Text="Click the &quot;Finish&quot; button to exit the [Wizard]." Order="900" TextLocId="Control.Text.ExitDialog#Description" MsiKey="ExitDialog#Description"/>
     <ROW Dialog_="ExitDialog" Control="BottomLine" Type="Line" X="0" Y="234" Width="372" Height="0" Attributes="1" Order="1000" MsiKey="ExitDialog#BottomLine"/>
-    <ROW Dialog_="ExitDialog" Control="Hyperlink_1" Type="Hyperlink" X="158" Y="122" Width="161" Height="11" Attributes="65539" Property="HYPERLINK_1_PROP" Text="&lt;a href=&quot;https://asciiblues.github.io/pqz/dwn&quot;&gt;Download &amp; setup the android app&lt;/a&gt;" Order="1100"/>
-    <ROW Dialog_="ExitDialog" Control="Hyperlink_2" Type="Hyperlink" X="158" Y="140" Width="56" Height="11" Attributes="65539" Property="HYPERLINK_2_PROP" Text="&lt;a href=&quot;https://github.com/asciiblues/Paper_QZ/&quot;&gt;Visit Github&lt;/a&gt;" Order="1200"/>
-    <ROW Dialog_="ExitDialog" Control="Hyperlink_3" Type="Hyperlink" X="214" Y="140" Width="75" Height="11" Attributes="65539" Property="HYPERLINK_3_PROP" Text="&lt;a href=&quot;https://asciiblues.github.io/&quot;&gt;Visit Website&lt;/a&gt;" Order="1300"/>
+    <ROW Dialog_="ExitDialog" Control="Hyperlink_1" Type="Hyperlink" X="131" Y="116" Width="161" Height="11" Attributes="65539" Property="HYPERLINK_1_PROP" Text="&lt;a href=&quot;https://asciiblues.github.io/pqz/dwn&quot;&gt;Download &amp; setup the android app&lt;/a&gt;" Order="1100"/>
+    <ROW Dialog_="ExitDialog" Control="Hyperlink_2" Type="Hyperlink" X="135" Y="140" Width="56" Height="11" Attributes="65539" Property="HYPERLINK_2_PROP" Text="&lt;a href=&quot;https://github.com/asciiblues/Paper_QZ/&quot;&gt;Visit Github&lt;/a&gt;" Order="1200"/>
+    <ROW Dialog_="ExitDialog" Control="Hyperlink_3" Type="Hyperlink" X="204" Y="140" Width="75" Height="11" Attributes="65539" Property="HYPERLINK_3_PROP" Text="&lt;a href=&quot;https://asciiblues.github.io/&quot;&gt;Visit Website&lt;/a&gt;" Order="1300"/>
+    <ROW Dialog_="ExitDialog" Control="Hyperlink_4" Type="Hyperlink" X="131" Y="206" Width="161" Height="11" Attributes="65539" Property="HYPERLINK_4_PROP" Text="&lt;a href=&quot;https://serveo.net&quot;&gt;Big Thanks to serveo !!! | serveo.net&lt;/a&gt;" Order="1400"/>
     <ROW Dialog_="License" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" TextLocId="-" Options="1"/>
     <ROW Dialog_="License" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" TextLocId="-" Options="1"/>
     <ROW Dialog_="License" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" TextLocId="-" Options="1"/>
@@ -926,7 +948,8 @@
     <ROW Dialog_="License" Control="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Attributes="196611" Text="This is Under the &quot; GNU GPL-3.0 License &quot;" Order="700"/>
     <ROW Dialog_="License" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="800"/>
     <ROW Dialog_="License" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="License" TextStyle="[DlgTitleFont]" Order="900"/>
-    <ROW Dialog_="License" Control="ScrollableText_1" Type="ScrollableText" X="15" Y="52" Width="344" Height="165" Attributes="3" Property="SCROLLABLETEXT_1_PROP" Text="LICENSE.rtf" Order="1000"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="20" Y="55" Width="330" Height="126" Attributes="7" Text="LICENSE.rtf" Order="400" TextLocId="Control.Text.LicenseAgreementDlg#AgreementText" MsiKey="LicenseAgreementDlg#AgreementText"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control="Description" Type="Text" X="25" Y="23" Width="304" Height="15" Attributes="196611" Text="This is use &apos; GNU GPL-3.0 License &apos;" Order="900" MsiKey="LicenseAgreementDlg#Description"/>
     <ROW Dialog_="NewDialog" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" TextLocId="-" Options="1"/>
     <ROW Dialog_="NewDialog" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" TextLocId="-" Options="1"/>
     <ROW Dialog_="NewDialog" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" TextLocId="-" Options="1"/>
@@ -945,17 +968,29 @@
     <ROW Dialog_="NewDialog_1" Control="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Attributes="196611" Text="New Dialog Description..." Order="700"/>
     <ROW Dialog_="NewDialog_1" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="800"/>
     <ROW Dialog_="NewDialog_1" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="New Dialog" TextStyle="[DlgTitleFont]" Order="900"/>
+    <ROW Dialog_="NewDialog_2" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" TextLocId="-" Options="1"/>
+    <ROW Dialog_="NewDialog_2" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" TextLocId="-" Options="1"/>
+    <ROW Dialog_="NewDialog_2" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" TextLocId="-" Options="1"/>
+    <ROW Dialog_="NewDialog_2" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Order="400"/>
+    <ROW Dialog_="NewDialog_2" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="NewDialog_2" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="NewDialog_2" Control="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Attributes="196611" Text="Setup the Password for Paper QZ only" Order="700"/>
+    <ROW Dialog_="NewDialog_2" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="800"/>
+    <ROW Dialog_="NewDialog_2" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Set Password" TextStyle="[DlgTitleFont]" Order="900"/>
+    <ROW Dialog_="NewDialog_2" Control="Text_1" Type="Text" X="15" Y="146" Width="59" Height="11" Attributes="65539" Property="TEXT_1_PROP" Text="Password : - " Order="1000"/>
+    <ROW Dialog_="NewDialog_2" Control="pwd" Type="Edit" X="83" Y="143" Width="277" Height="18" Attributes="3" Property="EDIT_1_PROP" Order="1100"/>
+    <ROW Dialog_="NewDialog_2" Control="Text_2" Type="Text" X="15" Y="74" Width="333" Height="35" Attributes="65539" Property="TEXT_2_PROP" Text="Enter the any password for paper QZ only , If you forget this password you can view the password using Paper QZ CMD" Order="1200"/>
     <ATTRIBUTE name="DeletedRows" value="ExitDialog#Hyperlink@ExitDialog#ViewReadmeText"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlConditionComponent">
     <ATTRIBUTE name="DeletedRows" value="ExitDialog#Hyperlink#Hide#((NOT AI_INSTALL) AND (NOT AI_PATCH)) OR NOT AiReadmeLink@ExitDialog#ViewReadmeText#Hide#(((NOT AI_INSTALL) AND (NOT AI_PATCH)) OR ((CTRLS &lt;&gt; 1) AND (CTRLS &lt;&gt; 3))) OR AiReadmeLink"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
-    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="License" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
-    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="License" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="NewDialog_2" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
-    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="NewDialog_2" Condition="AI_INSTALL" Ordering="201"/>
     <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
     <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
     <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
@@ -975,19 +1010,24 @@
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
     <ROW Dialog_="License" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
-    <ROW Dialog_="License" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="License" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="NewDialog" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
     <ROW Dialog_="NewDialog_1" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="NewDialog_2" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
+    <ROW Dialog_="NewDialog_2" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="NewDialog_2" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
     <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
-    <ROW Action="AI_ApplyShortcutFlags" Type="3073" Source="ShortcutFlags.dll" Target="UpdateShortcutFlags" WithoutSeq="true"/>
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_CommitAccounts" Type="11777" Source="userAccounts.dll" Target="CommitAccounts" WithoutSeq="true"/>
+    <ROW Action="AI_CreateAccount" Type="11265" Source="userAccounts.dll" Target="CreateAccount" WithoutSeq="true"/>
     <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER_1" Type="51" Source="CustomActionData" Target="AEYAbABhAGcAcwACADEAAQBQAGEAcgBhAG0AcwACAAEAUwBjAHIAaQBwAHQAUwByAGMAQgBpAG4AYQByAHkAUgBvAHcASQBkAAIAbQBpAG4AcwAuAHAAcwAx"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
     <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
@@ -1012,29 +1052,29 @@
     <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="LaunchApp"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
-    <ROW Action="AI_PinShortcuts" Type="1" Source="ShortcutFlags.dll" Target="PinShortcuts"/>
-    <ROW Action="AI_PinToStartScreen" Type="1025" Source="ShortcutFlags.dll" Target="PinToStartScreen" WithoutSeq="true"/>
-    <ROW Action="AI_PinToTaskbar" Type="1025" Source="ShortcutFlags.dll" Target="PinToTaskbar" WithoutSeq="true"/>
-    <ROW Action="AI_PrepareShortcutFlags" Type="1" Source="ShortcutFlags.dll" Target="PrepareActionData"/>
+    <ROW Action="AI_ProcessAccounts" Type="1" Source="userAccounts.dll" Target="ProcessAccounts"/>
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_RemoveAccount" Type="11265" Source="userAccounts.dll" Target="RemoveAccount" WithoutSeq="true"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_RollbackAccount" Type="11521" Source="userAccounts.dll" Target="RemoveAccount" WithoutSeq="true"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
-    <ROW Action="AI_UnpinFromStartScreen" Type="1025" Source="ShortcutFlags.dll" Target="UnpinFromStartScreen" WithoutSeq="true"/>
-    <ROW Action="AI_UnpinFromTaskbar" Type="1025" Source="ShortcutFlags.dll" Target="UnpinFromTaskbar" WithoutSeq="true"/>
-    <ROW Action="AI_UnpinShortcuts" Type="1" Source="ShortcutFlags.dll" Target="UnpinShortcuts"/>
+    <ROW Action="AI_TxtUpdaterCommit" Type="11777" Source="TxtUpdater.dll" Target="OnTxtUpdaterCommit" WithoutSeq="true"/>
+    <ROW Action="AI_TxtUpdaterConfig" Type="11265" Source="TxtUpdater.dll" Target="OnTxtUpdaterConfig" WithoutSeq="true"/>
+    <ROW Action="AI_TxtUpdaterInstall" Type="1" Source="TxtUpdater.dll" Target="OnTxtUpdaterInstall"/>
+    <ROW Action="AI_TxtUpdaterRollback" Type="11521" Source="TxtUpdater.dll" Target="OnTxtUpdaterRollback" WithoutSeq="true"/>
+    <ROW Action="AI_UninstallAccounts" Type="1" Source="userAccounts.dll" Target="UninstallAccounts"/>
+    <ROW Action="PowerShellScriptFile" Type="65" Source="PowerShellScriptLauncher.dll" Target="RunPowerShellFileScript" Options="134217728" AdditionalSeq="AI_DATA_SETTER_1"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
-    <ROW Action="viewer.exe" Type="194" Source="viewer.exe" Target="/DontWait /RunAsAdmin &quot;[#stpwd.bat]&quot;"/>
-    <ROW Action="viewer.exe_1" Type="194" Source="viewer.exe" Target="/DontWait &quot;[#getcrt.bat]&quot;"/>
-    <ROW Action="viewer.exe_2" Type="194" Source="viewer.exe" Target="/DontWait /RunAsAdmin &quot;[#sshins.bat]&quot;"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
     <ROW Dialog="License" HCentering="50" VCentering="50" Width="368" Height="267" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="NewDialog" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="NewDialog_1" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="NewDialog_2" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiEmbeddedUIComponent">
     <ROW MsiEmbeddedUI="InstallerAnalytics" FileName="InstallerAnalytics.dll" Attributes="0" MessageFilter="0" Data="&lt;AI_TEMPLATES&gt;PlaceHolder.dat"/>
@@ -1258,7 +1298,7 @@
     <ROW Feature_="MainFeature" Component_="cmd.bat"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="cmd.exe" SourcePath="D:\image.ico" Index="0"/>
+    <ROW Name="cmd_1.exe" SourcePath="..\pwsh.ico" Index="0"/>
     <ROW Name="favicon.exe" SourcePath="favicon.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
@@ -1290,9 +1330,11 @@
     <ROW Action="AI_IaLogMachineInfo" Sequence="399"/>
     <ROW Action="AI_IaLogCustomInfo" Sequence="1401"/>
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
-    <ROW Action="AI_PrepareShortcutFlags" Condition="(VersionNT &gt; 501) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="4501"/>
-    <ROW Action="AI_PinShortcuts" Condition="(VersionNT &gt; 600) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="6499"/>
-    <ROW Action="AI_UnpinShortcuts" Condition="(VersionNT &gt; 600) AND (REMOVE = &quot;ALL&quot;)" Sequence="3199"/>
+    <ROW Action="AI_ProcessAccounts" Condition="(VersionNT &gt;= 500) AND (REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="1551"/>
+    <ROW Action="AI_UninstallAccounts" Condition="(VersionNT &gt;= 500) AND (REMOVE = &quot;ALL&quot;)" Sequence="1649"/>
+    <ROW Action="AI_TxtUpdaterInstall" Sequence="5101"/>
+    <ROW Action="PowerShellScriptFile" Condition="( NOT Installed )" Sequence="6402"/>
+    <ROW Action="AI_DATA_SETTER_1" Condition="( NOT Installed )" Sequence="6401"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
@@ -1306,9 +1348,6 @@
     <ROW Action="AI_IaLogPkgStarted" Condition="VersionMsi &lt; &quot;4.05&quot; OR UILevel = 2 OR LIMITUI = 1 OR UPGRADINGPRODUCTCODE" Sequence="51"/>
     <ROW Action="AI_IaLogMachineInfo" Sequence="399"/>
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
-    <ROW Action="viewer.exe_1" Condition="( NOT Installed )" Sequence="1303"/>
-    <ROW Action="viewer.exe_2" Condition="( NOT Installed )" Sequence="1302"/>
-    <ROW Action="viewer.exe" Condition="( NOT Installed )" Sequence="1301"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="( Version9X OR ( NOT VersionNT64 ) OR ( VersionNT64 AND ((VersionNT64 &lt;&gt; 601) OR (MsiNTProductType &lt;&gt; 1)) ) )" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT64Display]." DescriptionLocId="AI.LaunchCondition.NoSpecificNT64" IsPredefined="true" Builds="DefaultBuild"/>
@@ -1343,7 +1382,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="PaperQZ" Directory_="SHORTCUTDIR" Name="PAPERQ~1|Paper QZ" Component_="server.bat" Target="[#server.bat]" Description="The server for Paper QZ baed on serveo and openssh" Hotkey="0" Icon_="favicon.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-    <ROW Shortcut="PaperQZCommandPrompt" Directory_="SHORTCUTDIR" Name="PAPERQ~2|Paper QZ Command Prompt" Component_="cmd.bat" Target="[#cmd.bat]" Description="The Paper QZ Command Prompt for get  |  CRT for QZ  | show the password etc .." Hotkey="0" Icon_="cmd.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR" CustomFlags="1"/>
+    <ROW Shortcut="PaperQZCommandPrompt" Directory_="SHORTCUTDIR" Name="PAPERQ~2|Paper QZ Command Prompt" Component_="cmd.bat" Target="[#cmd.bat]" Description="The Paper QZ Command Prompt for get  |  CRT for QZ  | show the password etc .." Hotkey="0" Icon_="cmd_1.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
     <ROW Shortcut="PaperQZ_1" Directory_="DesktopFolder" Name="PAPERQ~1|Paper QZ" Component_="server.bat" Target="[#server.bat]" Description="The server for Paper QZ baed on serveo and openssh" Hotkey="0" Icon_="favicon.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
@@ -1352,5 +1391,15 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.TxtUpdateComponent">
+    <ROW Name="Append/Create" TxtUpdateSet="pwd.txt" FindPattern="[EDIT_1_PROP]" Options="128" Order="0" FileEncoding="2"/>
+    <ROW Name="Replace" TxtUpdateSet="pwd.txt" FindPattern="YourFindText" ReplacePattern="YourReplaceText" Options="2" Order="1" FileEncoding="-1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.TxtUpdateSetComponent">
+    <ROW Key="pwd.txt" Component="apimswincoreprocessthreadsl111.dll" FileName="pwd.txt" Directory="UserProfileFolder" Options="25"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.UserAccountsComponent">
+    <ROW UserName="pqzusr" Property="pswd" Comment="pqzusr" Attributes="65536" Groups="S-1-5-32-544" ErrorControl="0" Flags="0"/>
   </COMPONENT>
 </DOCUMENT>

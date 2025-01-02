@@ -5,6 +5,9 @@ import java.awt.*;
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
@@ -117,15 +120,12 @@ public class Main {
               break;
             case "vpsd":
                 try {
-                    File myObj = new File("C:\\pqzcrt\\pswd.txt");
-                    Scanner myReader = new Scanner(myObj);
-                    while (myReader.hasNextLine()) {
-                        String data = myReader.nextLine();
-                        System.out.println("Password is = " + data);
-                        JOptionPane.showMessageDialog(null , "Password is = " + data, "Password", JOptionPane.INFORMATION_MESSAGE);
-                    }
-                    myReader.close();
-                } catch (FileNotFoundException e) {
+                    String userProfile = System.getenv("USERPROFILE");
+                    Path filePath = Paths.get(userProfile, "pwd.txt");
+                    String pswd = Files.readString(filePath);
+                    System.out.println("password = " + pswd);
+                    JOptionPane.showMessageDialog(null, "Password = " + pswd, "Password", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception e) {
                     System.out.println("An error occurred." + e);
                     e.printStackTrace();
                 }

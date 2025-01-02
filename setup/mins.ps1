@@ -1,4 +1,3 @@
-mkdir C:\pqzcrt
 (New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 # Install the OpenSSH Client
