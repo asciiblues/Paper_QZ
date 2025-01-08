@@ -25,8 +25,6 @@ OS : Windows 8.1 | 10 | 11 64bit
 --------------------
 RAM : 4 GB minimum | 8 GB recommended 
 --------------------
-Storage : 126 GB with OS
---------------------
 ```
 ## System requirements for Android phone (client)
 ~~~
